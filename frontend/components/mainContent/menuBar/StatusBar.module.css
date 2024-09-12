@@ -1,0 +1,29 @@
+.appleIcon {
+  width: 16px;
+  height: 16px;
+  margin: 0 13px 0 20px;
+  cursor: pointer;
+}
+
+.right_ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+}
+
+.right_ul > li {
+  height: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.right_ul > li > img {
+  width: 26px;
+  height: 26px;
+}
+
+.date {
+  margin-left: 5px;
+}
