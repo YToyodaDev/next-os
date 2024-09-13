@@ -1,5 +1,38 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { faApple } from '@fortawesome/free-brands-svg-icons'; // Import your icons or replace as needed
+export interface Folder {
+  src: string;
+  alt: string;
+  text: string;
+  link: string;
+}
+
+export const folders: Folder[] = [
+  {
+    src: '/images/folder.png',
+    alt: 'folder',
+    text: 'leaflet-app',
+    link: '/leaflet',
+  },
+  {
+    src: '/images/folder.png',
+    alt: 'folder',
+    text: 'SelfDrivingCar',
+    link: '/nested-nav',
+  },
+  {
+    src: '/images/folder.png',
+    alt: 'folder',
+    text: 'twelve-grid',
+    link: '/twelve-grid',
+  },
+  {
+    src: '/images/folder.png',
+    alt: 'folder',
+    text: 'glass effect',
+    link: '/glass-effect',
+  },
+];
 
 export type MenuData = {
   id: number;
@@ -160,43 +193,4 @@ export const statusBarData: StatusBarItem[] = [
   { id: 5, name: 's5', url: '/images/statusicons/5.png' },
   { id: 6, name: 's6', url: '/images/statusicons/6.png' },
   { id: 7, name: 's7', url: '/images/statusicons/7.png' },
-];
-export interface Folder {
-  src: string;
-  alt: string;
-  text: string;
-  link: string;
-}
-
-export const folders: Folder[] = [
-  {
-    src: '/images/folder.png',
-    alt: 'folder',
-    text: 'scroll-animation',
-    link: '/scroll-animation',
-  },
-  {
-    src: '/images/folder.png',
-    alt: 'folder',
-    text: 'SelfDrivingCar',
-    link: '/nested-nav',
-  },
-  {
-    src: '/images/folder.png',
-    alt: 'folder',
-    text: 'twelve-grid',
-    link: '/twelve-grid',
-  },
-  {
-    src: '/images/folder.png',
-    alt: 'folder',
-    text: 'glass effect',
-    link: '/glass-effect',
-  },
-  {
-    src: '/images/folder.png',
-    alt: 'folder',
-    text: 'Documents',
-    link: '/documents',
-  },
 ];
