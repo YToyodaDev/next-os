@@ -17,8 +17,14 @@ export const folders: Folder[] = [
   {
     src: '/images/folder.png',
     alt: 'folder',
-    text: 'SelfDrivingCar',
-    link: '/nested-nav',
+    text: 'reorder-list',
+    link: '/reorder-list',
+  },
+  {
+    src: '/images/folder.png',
+    alt: 'folder',
+    text: 'right-click',
+    link: '/right-click',
   },
   {
     src: '/images/folder.png',

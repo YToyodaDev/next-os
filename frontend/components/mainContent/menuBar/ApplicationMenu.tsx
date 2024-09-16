@@ -1,3 +1,5 @@
+/*  Menu Bar Component */
+
 import Divider from '@/components/mainContent/ui/Divider';
 import {
   applicationMenuData,
@@ -5,7 +7,7 @@ import {
 } from '@/components/mainContent/utils/data';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { SuBMenuItems } from '@/components/mainContent/menuBar/AppleMenu';
 import useOutsideClick from '@/components/mainContent/hooks/useOutsideClick';
 
@@ -55,38 +57,25 @@ const StyledSpan = styled.span`
 `;
 
 function ApplicationMenu() {
-  const [isOutsideClicked, SetIsOutsideClicked] = useState(false);
-  const refMenuBar = useRef(null);
-
-  function handleOutsideClick() {
-    SetIsOutsideClicked(true);
-  }
-
-  useOutsideClick(refMenuBar, handleOutsideClick);
-
   return (
-    <StyledWrapperLeft ref={refMenuBar}>
-      <MultiLevelMenu
-        items={applicationMenuData}
-        isOutsideClicked={isOutsideClicked}
-      />
+    <StyledWrapperLeft>
+      <MultiLevelMenu items={applicationMenuData} />
     </StyledWrapperLeft>
   );
 }
 type MultiLevelMenuProps = {
   items: MenuData[];
   depth?: number;
-  isOutsideClicked: boolean;
+  // isOutsideClicked: boolean;
 };
 
-export const MultiLevelMenu = ({
-  items,
-  isOutsideClicked,
-}: MultiLevelMenuProps) => {
+export const MultiLevelMenu = ({ items }: MultiLevelMenuProps) => {
   const [option, setOption] = useState<number>();
   const [isActive, setIsActive] = useState<boolean>(false);
+  const refMenuBar = useRef(null);
 
   function handleOnClick(id: number) {
+    console.log('hander calleds');
     if (!option || id !== option) {
       setOption(id);
       setIsActive(true);
@@ -102,15 +91,9 @@ export const MultiLevelMenu = ({
     setIsActive(false);
     setOption(0);
   }
-  // useEffect(() => {
-  //   document.addEventListener('mousedown', handleOnClick);
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleOnClick);
-  //   };
-  // }, []);
-
+  useOutsideClick(refMenuBar, resetMenu);
   return (
-    <StyledUl>
+    <StyledUl ref={refMenuBar}>
       {items.map((item) =>
         item.name === 'hr' ? (
           <Divider key={item.id} />

@@ -1,3 +1,5 @@
+/* This is top level component of Menu Bar*/
+
 import styles from './StatusBar.module.css';
 
 import { useClock } from '@/components/mainContent/hooks/useClock';

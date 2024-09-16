@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Dock from '../components/mainContent/dock/Dock';
 import FolderContent from '../components/mainContent/folderContent/FolderContent';
 import Folders from '../components/mainContent/folders/Folders';

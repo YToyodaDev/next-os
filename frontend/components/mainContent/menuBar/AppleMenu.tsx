@@ -115,7 +115,7 @@ export const SuBMenuItems = ({ items, depth }: SubMenuProps) => {
   if (depth) {
     num = depth;
   }
-  console.log(depth);
+
   return (
     <>
       {num > 0 ? (
